@@ -15,8 +15,8 @@
 <a href="https://beyondchats-frontend-lac.vercel.app/" title="Open Frontend Live">
   <img src="https://img.shields.io/badge/%F0%9F%8C%90%20Frontend-Live-brightgreen?style=for-the-badge" alt="Frontend Live" />
 </a>
-<a href="https://beyondchats-assignment-backend.onrender.com/api/articles" title="Open Backend API (Articles)">
-  <img src="https://img.shields.io/badge/%F0%9F%93%8A%20API%20Data-13%20Articles-blue?style=for-the-badge" alt="API Data" />
+<a href="https://beyondchats-assignment-backend.onrender.com/api/articles" title="Open Backend API">
+  <img src="https://img.shields.io/badge/%F0%9F%93%8A%20API-Articles-blue?style=for-the-badge" alt="Articles" />
 </a>
 <a href="https://github.com/Samiksha-Lone/beyondchats-assignment" title="View Source Repository">
   <img src="https://img.shields.io/badge/%F0%9F%93%82%20Source-Repo-6f42c1?style=for-the-badge" alt="Source Repo" />
