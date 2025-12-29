@@ -11,7 +11,11 @@ backend/package-lock.json
 package-lock.json
 **/yarn.lock
 backend/yarn.lock
-
+enhancer/yarn.lock
+yarn.lock
+**/pnpm-lock.yaml
+backend/pnpm-lock.yaml
+pnpm-lock.yaml
 
 # Environment variables
 .env
