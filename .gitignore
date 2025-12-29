@@ -17,7 +17,24 @@ frontend/.env*
 !frontend/.env.example
 enhancer/.env*
 !enhancer/.env.example       
+# ============================================================================
+# PROJECT-WIDE IGNORES
+# ============================================================================
 
+# Environment Variables (CRITICAL: Never commit sensitive data!)
+# Ignore ALL .env files in ANY folder/subfolder - INCLUDING .env.example
+# These should NEVER be committed to GitHub regardless of their content
+.env
+.env.*
+backend/.env
+backend/.env.*
+frontend/.env
+frontend/.env.*
+enhancer/.env
+enhancer/.env.*
+# Also catch any nested .env files at any depth
+**/.env
+**/.env.*
 # Dependencies
 **/node_modules/
 backend/node_modules/
