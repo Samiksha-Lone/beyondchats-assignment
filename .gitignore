@@ -375,6 +375,12 @@ mongodb_backup/
 test_articles/
 sample_data/
 
+# Validation & Error Logs
+validation-errors/
+validation.log
+errors.log
+input-validation-temp/
+
 # Postman workspace files (keep collection, ignore workspace)
 Postman/postman_environment.json.backup
 

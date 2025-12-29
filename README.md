@@ -206,6 +206,11 @@ See [API Documentation](#api-documentation) section below for complete API endpo
 - ✅ MongoDB integration with Mongoose ORM
 - ✅ Web scraper for article collection from BeyondChats blogs
 - ✅ RESTful API following best practices
+- ✅ **Input Validation using express-validator** for data integrity and security
+  - Title validation (minimum 5 characters)
+  - Content validation (minimum 10 characters)
+  - URL validation (valid URL format required)
+  - Automatic error responses for invalid input
 - ✅ Error handling and validation
 - ✅ CORS-enabled for frontend communication
 
@@ -501,6 +506,40 @@ Content-Type: application/json
   ...
 }
 ```
+
+**Input Validation Rules**
+- `title`: Must be at least 5 characters long (required)
+- `content`: Must be at least 10 characters long (required)
+- `url`: Must be a valid URL format (required)
+
+**Response (400 Bad Request - Validation Failed)**
+```json
+{
+  "errors": [
+    {
+      "type": "field",
+      "value": "Hi",
+      "msg": "Title must be at least 5 chars",
+      "path": "title",
+      "location": "body"
+    }
+  ],
+  "message": "Validation failed"
+}
+```
+
+**Example with invalid data:**
+```bash
+curl -X POST http://localhost:5000/api/articles \
+  -H "Content-Type: application/json" \
+  -d '{
+    "title": "Hi",
+    "content": "Short",
+    "url": "invalid-url"
+  }'
+```
+
+Response: 400 Bad Request with validation error details
 
 #### 4. Update Article
 
