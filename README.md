@@ -29,7 +29,7 @@ A comprehensive full-stack web application demonstrating a complete article mana
 
 - [Overview](#overview)
 - [Live Demo](#live-demo)
-- [✅ Assignment Phases Complete](#-assignment-phases-complete)
+- [Assignment Phases Complete](#-assignment-phases-complete)
 - [Features](#features)
 - [Architecture](#architecture)
 - [Prerequisites](#prerequisites)
@@ -330,6 +330,12 @@ MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/beyondchats
 PORT=5000
 NODE_ENV=development
 ```
+
+Example env templates are included for convenience and can be copied/renamed to `.env`:
+
+- [backend/.env.example](backend/.env.example)
+- [enhancer/.env.example](enhancer/.env.example)
+- [frontend/.env.example](frontend/.env.example)
 
 #### `enhancer/.env`
 
