@@ -19,7 +19,7 @@ function App() {
   }, [])
 
   const originals = articles.filter(a => a.original === true)
-  const enhanced = articles.filter(a => a.original === false || a.is_updated === true)
+  const enhanced = articles.filter(a => !a.original)
 
   if (loading) return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 flex items-center justify-center">
@@ -88,7 +88,7 @@ function App() {
                     </div>
                   )}
                   <a 
-                    href={article.url || `http://localhost:5000/api/articles/${article._id}`} 
+                    href={article.url || `https://beyondchats-assignment-backend.onrender.com/api/articles/${article._id}`} 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 text-emerald-600 hover:text-emerald-700 font-semibold bg-emerald-50 px-6 py-3 rounded-2xl hover:bg-emerald-100 transition-all border-2 border-emerald-200"
@@ -112,14 +112,14 @@ function App() {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {originals.map(article => (
-                <div key={article._id} className="group bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl border border-blue-100 hover:border-blue-200 transition-all duration-500 hover:-translate-y-2 cursor-pointer">
+                <div key={article._id || `https://beyondchats-assignment-backend.onrender.com/api/articles/${article._id}`} className="group bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl border border-blue-100 hover:border-blue-200 transition-all duration-500 hover:-translate-y-2 cursor-pointer">
                   <h3 className="text-2xl font-bold text-slate-900 group-hover:text-blue-700 mb-4 line-clamp-2">
                     {article.title}
                   </h3>
                   <p className="text-slate-600 leading-relaxed line-clamp-4 mb-6">
                     {article.excerpt}
                   </p>
-                  <a href={article.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold bg-blue-50 px-6 py-3 rounded-2xl hover:bg-blue-100 transition-all border-2 border-blue-100">
+                  <a href={article.url || `https://beyondchats-assignment-backend.onrender.com/api/articles/${article._id}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold bg-blue-50 px-6 py-3 rounded-2xl hover:bg-blue-100 transition-all border-2 border-blue-100">
                     Read Original →
                   </a>
                 </div>
