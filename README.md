@@ -9,19 +9,21 @@
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](#license)
 [![Status](https://img.shields.io/badge/Status-Complete-brightgreen.svg)](#-assignment-phases-complete)
 
+
 ## Live Demo
 
 <p>
-<a href="https://beyondchats-frontend-lac.vercel.app/" title="Open Frontend Live">
-  <img src="https://img.shields.io/badge/%F0%9F%8C%90%20Frontend-Live-brightgreen?style=for-the-badge" alt="Frontend Live" />
+<a href="https://beyondchats-frontend-beta.vercel.app" title="Frontend Live">
+  <img src="https://img.shields.io/badge/Frontend-LIVE-brightgreen?style=for-the-badge" alt="Frontend Live" />
 </a>
-<a href="https://beyondchats-assignment-backend.onrender.com/api/articles" title="Open Backend API">
-  <img src="https://img.shields.io/badge/%F0%9F%93%8A%20API-Articles-blue?style=for-the-badge" alt="Articles" />
+<a href="https://beyondchats-assignment-backend.onrender.com/api/articles" title="Backend API">
+  <img src="https://img.shields.io/badge/API-13%20Articles-blue?style=for-the-badge" alt="API Live" />
 </a>
-<a href="https://github.com/Samiksha-Lone/beyondchats-assignment" title="View Source Repository">
-  <img src="https://img.shields.io/badge/%F0%9F%93%82%20Source-Repo-6f42c1?style=for-the-badge" alt="Source Repo" />
+<a href="https://github.com/Samiksha-Lone/beyondchats-assignment" title="Source Code">
+  <img src="https://img.shields.io/badge/Source-GitHub-181717?style=for-the-badge" alt="GitHub" />
 </a>
 </p>
+
 
 A comprehensive full-stack web application demonstrating a complete article management and AI enhancement system. This project implements three distinct phases: a robust REST API backend, an AI-powered article enhancement service, and a responsive React frontend.
 
