@@ -28,7 +28,7 @@ router.get('/:id', async (req, res) => {
 router.post('/', [
   body('title').isLength({ min: 5 }).trim().escape().withMessage('Title must be at least 5 chars'),
   body('content').isLength({ min: 10 }).withMessage('Content must be at least 10 chars'),
-  body('url').isURL().withMessage('Valid URL required'),  // ← REQUIRED BY MONGODB
+  body('url').optional({ checkFalsy: true }).isURL().withMessage('Valid URL required'),
 ], async (req, res) => {
   try {
     // CHECK VALIDATION ERRORS FIRST
@@ -44,7 +44,11 @@ router.post('/', [
     await article.save();
     res.status(201).json(article);
   } catch (error) {
-    res.status(500).json({ error: error.message });
+    console.error('❌ POST Article Error:', error);
+    res.status(500).json({ 
+      error: error.message,
+      details: error.name === 'ValidationError' ? error.errors : null 
+    });
   }
 });
 

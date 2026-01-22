@@ -1,13 +1,15 @@
-# BeyondChats Assignment
+# SmartArticle AI
 
 [![Node.js](https://img.shields.io/badge/Node.js-18+-green.svg)](https://nodejs.org/)
 [![MongoDB](https://img.shields.io/badge/MongoDB-9.0+-blue.svg)](https://www.mongodb.com/)
 [![Express.js](https://img.shields.io/badge/Express-4.19-orange.svg)](https://expressjs.com/)
 [![React](https://img.shields.io/badge/React-19.2-blue.svg)](https://react.dev/)
 [![Vite](https://img.shields.io/badge/Vite-7.2-646cff.svg)](https://vitejs.dev/)
+[![TensorFlow.js](https://img.shields.io/badge/TensorFlow.js-FF6F00.svg)](https://www.tensorflow.org/js)
+[![LangChain.js](https://img.shields.io/badge/LangChain.js-1C3C3C.svg)](https://js.langchain.com/)
 [![OpenAI](https://img.shields.io/badge/OpenAI-API-412991.svg)](https://openai.com/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](#license)
-[![Status](https://img.shields.io/badge/Status-Complete-brightgreen.svg)](#-assignment-phases-complete)
+[![Status](https://img.shields.io/badge/Status-Complete-brightgreen.svg)](#-project-components)
 
 
 ## Live Demo
@@ -25,13 +27,13 @@
 </p>
 
 
-A comprehensive full-stack web application demonstrating a complete article management and AI enhancement system. This project implements three distinct phases: a robust REST API backend, an AI-powered article enhancement service, and a responsive React frontend.
+A comprehensive full-stack web application demonstrating a complete article management and AI enhancement system. This project implements three distinct components: a robust REST API backend, an AI-powered article enhancement service, and a responsive React frontend with ML Analytics Dashboard.
 
 ## 📑 Table of Contents
 
 - [Overview](#overview)
 - [Live Demo](#live-demo)
-- [Assignment Phases Complete](#-assignment-phases-complete)
+- [Project Components](#-project-components)
 - [Features](#features)
 - [Architecture](#architecture)
 - [Prerequisites](#prerequisites)
@@ -49,11 +51,11 @@ A comprehensive full-stack web application demonstrating a complete article mana
 
 ## Overview
 
-This project is a multi-component application built as part of the BeyondChats assignment. It demonstrates:
+This project is a multi-component application showcasing SmartArticle AI capabilities. It demonstrates:
 
-- **Backend API** (Phase 1): A production-ready Express.js REST API with MongoDB integration
-- **Article Enhancement** (Phase 2): An AI-powered service that enriches articles with enhanced content and references
-- **Frontend UI** (Phase 3): A modern React application with Tailwind CSS for responsive design
+- **Backend API**: A production-ready Express.js REST API with MongoDB integration
+- **Article Enhancement**: An AI-powered service that enriches articles with enhanced content and references
+- **Frontend UI**: A modern React application with Tailwind CSS for responsive design and ML Analytics Dashboard
 
 The application manages articles through their complete lifecycle: creation, storage, enhancement, and presentation.
 
@@ -127,9 +129,9 @@ curl -X POST http://localhost:5000/api/articles \
 
 See [API Documentation](#api-documentation) section below for complete API endpoints.
 
-## ✅ Assignment Phases Complete
+## ✅ Project Components
 
-### **Phase 1: ✅ CRUD APIs + MongoDB** (Backend)
+### **✅ CRUD APIs + MongoDB** (Backend)
 
 **Status:** COMPLETE — Production-ready REST API with full CRUD operations
 
@@ -143,28 +145,28 @@ See [API Documentation](#api-documentation) section below for complete API endpo
   ✅ GET    /api/articles        - Fetch all articles (8 total)
   ✅ GET    /api/articles/:id    - Get single article
   ✅ POST   /api/articles        - Create new article
-  ✅ PUT    /api/articles/:id    - Update article (used by Phase 2)
+  ✅ PUT    /api/articles/:id    - Update article (used by Enhancer)
   ✅ DELETE /api/articles/:id    - Delete article
   ```
-- **Database:** 8 Articles stored in MongoDB
-  - **5 Original articles** (Phase 1 - scraped/uploaded)
-  - **3 Enhanced articles** (Phase 2 - AI-generated)
+- **Database:** ML Analytics Dashboard
+  - **Original articles** (Backend - scraped/uploaded)
+  - **Enhanced articles** (AI Enhancer - generated)
 
 **Running:** `cd backend && npm run dev` → http://localhost:5000/api/articles
 
 ---
 
-### **Phase 2: ✅ AI Enhancement Service** (Enhancer)
+### **✅ AI Enhancement Service** (Enhancer)
 
 **Status:** COMPLETE — Automated article enrichment with OpenAI integration
 
 **Evidence:**
 - **File:** [enhancer/enhance.js](enhancer/enhance.js) — Production-ready enhancement script
   ```
-  1. Fetches original articles via Phase 1 API
+  1. Fetches original articles via Backend API
   2. Calls OpenAI GPT model for enhancement
   3. Generates references from real sources
-  4. Posts enhanced articles back to Phase 1 backend
+  4. Posts enhanced articles back to Backend
   ```
 - **Enhancement Process:**
   - Reads 5 original articles from MongoDB
@@ -177,14 +179,14 @@ See [API Documentation](#api-documentation) section below for complete API endpo
 
 ---
 
-### **Phase 3: ✅ React Frontend UI** (Frontend)
+### **✅ React Frontend UI** (Frontend)
 
 **Status:** COMPLETE — Responsive React UI showing original vs enhanced articles
 
 **Evidence:**
 - **File:** [frontend/src/App.jsx](frontend/src/App.jsx) — Main React component (597 lines)
   ```
-  ✅ Fetches articles from Phase 1 API (GET /api/articles)
+  ✅ Fetches articles from Backend API (GET /api/articles)
   ✅ Filters originals vs enhanced articles
   ✅ Displays side-by-side comparison
   ✅ Shows article counts: Total, Original, Enhanced
@@ -206,19 +208,18 @@ See [API Documentation](#api-documentation) section below for complete API endpo
 | Phase | Component | Input | Output | Storage |
 |-------|-----------|-------|--------|---------|
 | **1** | Backend API (Express) | CRUD requests | JSON articles | MongoDB |
-| **2** | Enhancer (Node.js) | Original articles (5) | Enhanced articles (3) | MongoDB via Phase 1 |
+| **2** | Enhancer (Node.js) | Original articles | Enhanced articles | MongoDB via Backend |
 | **3** | Frontend (React) | API GET requests | UI display | Browser cache |
 
-**Total Article Count:** 8 (5 original + 3 enhanced)
+**Total Article Count:** ML Analytics Dashboard
 
 ---
 
 ## Features
 
-### Phase 1: Backend REST API
+### Backend REST API
 - ✅ Complete CRUD operations for articles
 - ✅ MongoDB integration with Mongoose ORM
-- ✅ Web scraper for article collection from BeyondChats blogs
 - ✅ RESTful API following best practices
 - ✅ **Input Validation using express-validator** for data integrity and security
   - Title validation (minimum 5 characters)
@@ -228,19 +229,20 @@ See [API Documentation](#api-documentation) section below for complete API endpo
 - ✅ Error handling and validation
 - ✅ CORS-enabled for frontend communication
 
-### Phase 2: Article Enhancement Service
+### Article Enhancement Service
 - ✅ Automated article enhancement with AI
 - ✅ Reference and citation management
 - ✅ SEO optimization
 - ✅ Batch processing capabilities
 - ✅ Integration with OpenAI API
 
-### Phase 3: Frontend Application
+### Frontend Application
 - ✅ Responsive React UI
 - ✅ Side-by-side article comparison (Original vs Enhanced)
 - ✅ Real-time data fetching
 - ✅ Modern styling with Tailwind CSS
 - ✅ Code quality with ESLint
+- ✅ ML Analytics Dashboard
 
 ## Architecture
 
@@ -680,44 +682,44 @@ beyondchats-assignment/
 
 ## 📱 Screenshots (9 Total) ✅
 
-### Frontend UI (Phase 3)
+### Frontend UI
 - ![Home View](screenshots/frontend/home.webp) — Article list overview
 - ![Original Articles](screenshots/frontend/original.webp) — Original article display
 - ![Enhanced Articles](screenshots/frontend/enhanced.webp) — Enhanced content with comparison
 
-### MongoDB Proof (Phase 1+2)
-- ![8 Articles Database](screenshots/mongodb-articles.webp) — Complete database with 5 original + 3 enhanced articles
+### MongoDB Proof
+- ![ML Analytics Dashboard](screenshots/mongodb-articles.webp) — Complete database with original + enhanced articles
 
-### Postman API Testing (Phase 1 CRUD)
+### Postman API Testing (CRUD)
 - ![GET All Articles](screenshots/postman/1-get-all.webp) — Retrieve all articles
 - ![POST New Article](screenshots/postman/2-post-new.webp) — Create new article
 - ![GET Single Article](screenshots/postman/3-get-single.webp) — Fetch specific article by ID
-- ![PUT Update Article](screenshots/postman/4-put-update.webp) — Update article (used by Phase 2 enhancer)
+- ![PUT Update Article](screenshots/postman/4-put-update.webp) — Update article (used by enhancer)
 - ![DELETE Article](screenshots/postman/5-delete.webp) — Remove article
 
-## 📊 Data Flow Diagram (Phase 1→2→3)
+## 📊 Data Flow Diagram
 
 ```mermaid
 sequenceDiagram
     participant U as User / Browser
-    participant F as React Frontend (Phase 3)
-    participant B as Express Backend (Phase 1)
+    participant F as React Frontend
+    participant B as Express Backend
     participant M as MongoDB
-    participant E as Enhancer Service (Phase 2)
+    participant E as Enhancer Service
     participant AI as OpenAI LLM
     
     rect rgb(200, 150, 255)
-    Note over U,M: Phase 1: Backend REST API
+    Note over U,M: Backend REST API
     U->>F: 1. Load Articles
     F->>B: GET /api/articles
     B->>M: find({articles})
-    M->>B: Return 8 articles (5 original + 3 enhanced)
+    M->>B: Return articles (original + enhanced)
     B->>F: JSON Response
     F->>U: Display Article List
     end
     
     rect rgb(150, 200, 255)
-    Note over E,AI: Phase 2: AI Enhancement Service
+    Note over E,AI: AI Enhancement Service
     E->>B: Fetch articles to enhance
     B->>M: Query unenriched articles
     M->>B: Return articles
@@ -729,7 +731,7 @@ sequenceDiagram
     end
     
     rect rgb(200, 255, 200)
-    Note over F,U: Phase 3: Frontend Display
+    Note over F,U: Frontend Display
     U->>F: Click on article
     F->>B: GET /api/articles/:id
     B->>M: findById(id)
@@ -747,33 +749,31 @@ graph TB
         U["👤 User / Browser<br/>(http://localhost:5173)"]
     end
     
-    subgraph Frontend["📱 Phase 3: Frontend"]
-        FE["React 19.2 + Vite 7.2<br/>- Article List View<br/>- Original Article Display<br/>- Enhanced Article Display<br/>- Side-by-side Comparison"]
+    subgraph Frontend["📱 Frontend"]
+        FE["React 19.2 + Vite 7.2<br/>- Article List View<br/>- Original Article Display<br/>- Enhanced Article Display<br/>- Side-by-side Comparison<br/>- ML Analytics Dashboard"]
     end
     
-    subgraph Backend["⚙️ Phase 1: Backend API"]
+    subgraph Backend["⚙️ Backend API"]
         BE["Express.js 5.2 REST API<br/>(http://localhost:5000)<br/>- GET /api/articles<br/>- POST /api/articles<br/>- PUT /api/articles/:id<br/>- DELETE /api/articles/:id"]
         
-        SC["Web Scraper<br/>(Puppeteer + Cheerio)<br/>- Fetch from BeyondChats<br/>- Parse HTML<br/>- Store raw articles"]
+        SC["Article Management<br/>- Parse Content<br/>- Store articles"]
     end
     
-    subgraph Enhancer["✨ Phase 2: Enhancement Service"]
+    subgraph Enhancer["✨ Enhancement Service"]
         EN["Enhancer Script<br/>(Node.js)<br/>- Fetch articles<br/>- Call OpenAI API<br/>- Enrich content<br/>- Add references<br/>- Post back to backend"]
     end
     
     subgraph Database["💾 Data Layer"]
-        M[("MongoDB Atlas<br/>- Original Articles<br/>- Enhanced Articles<br/>- References<br/>- Metadata")]
+        M[("MongoDB Atlas<br/>- Original Articles<br/>- Enhanced Articles<br/>- References<br/>- Metadata<br/>- ML Analytics Dashboard")]
     end
     
     subgraph External["🌐 External Services"]
         AI["OpenAI API<br/>- GPT Models<br/>- Content Enhancement<br/>- Reference Generation"]
-        BLOGS["BeyondChats Blogs<br/>(Web Source)"]
     end
     
     U -->|Loads & Interacts| FE
     FE -->|HTTP Axios Requests| BE
     BE -->|CRUD Operations| M
-    SC -->|Fetches Data| BLOGS
     SC -->|Stores Articles| M
     EN -->|Fetches Unenriched| BE
     EN -->|Enhancement API Call| AI
@@ -793,11 +793,11 @@ graph TB
 **Component Responsibilities:**
 
 - **Client**: User interface and browser interaction
-- **Phase 3 (Frontend)**: React-based UI for displaying and comparing articles
-- **Phase 1 (Backend)**: REST API server managing article CRUD operations
-- **Phase 2 (Enhancer)**: Standalone service that enriches articles using AI
+- **Frontend**: React-based UI for displaying and comparing articles with ML Analytics Dashboard
+- **Backend**: REST API server managing article CRUD operations
+- **Enhancer**: Standalone service that enriches articles using AI
 - **Database**: MongoDB storing original and enhanced articles
-- **External Services**: OpenAI for content enhancement, BeyondChats blogs as source
+- **External Services**: OpenAI for content enhancement
 
 ## Technology Stack
 
@@ -997,7 +997,6 @@ npm install
 
 ## Acknowledgments
 
-- BeyondChats for the assignment
 - MongoDB for database services
 - OpenAI for AI capabilities
 - The open-source community

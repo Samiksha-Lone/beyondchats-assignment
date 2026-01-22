@@ -3,7 +3,7 @@ const cheerio = require('cheerio');
 const mongoose = require('mongoose');
 const Article = require('../models/Article');
 
-async function scrapeBeyondChats() {
+async function scrapeArticles() {
   try {
     // DON'T connect here - use existing connection
     await mongoose.connection.asPromise();
@@ -65,7 +65,7 @@ async function scrapeBeyondChats() {
       original: true,
       is_updated: false, // ✅ For frontend filter
       date: new Date().toISOString().split('T')[0],
-      author: 'BeyondChats Team'
+      author: 'SmartArticle AI Team'
     });
   }
 
@@ -73,4 +73,4 @@ async function scrapeBeyondChats() {
   process.exit(0);
 }
 
-scrapeBeyondChats().catch(console.error);
+scrapeArticles().catch(console.error);

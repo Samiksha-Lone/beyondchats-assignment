@@ -1,7 +1,7 @@
 {
   "name": "beyondchats-backend",
   "version": "1.0.0",
-  "description": "Phase 1: BeyondChats assignment backend",
+  "description": "SmartArticle AI backend API",
   "main": "server.js",
   "scripts": {
     "dev": "nodemon server.js",
